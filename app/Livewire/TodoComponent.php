@@ -11,7 +11,7 @@ class TodoComponent extends Component
     use WithPagination;
     #[Rule("required", as: 'To-do')]
     #[Rule("min:5")]
-    #[Rule("max:250")]
+    #[Rule("max:50")]
     public $task = '';
 
     public function createNewTodo()  {
@@ -32,6 +32,6 @@ class TodoComponent extends Component
 
     public function render()
     {
-        return view('livewire.todo', ['todos' => Todo::paginate(3)]);
+        return view('livewire.todo', ['todos' => Todo::orderBy('id', 'desc')->paginate(5)]);
     }
 }

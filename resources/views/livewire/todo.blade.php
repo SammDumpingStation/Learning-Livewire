@@ -2,9 +2,9 @@
     <section class="w-[400px] bg-white hidden">
 
     </section>
-    <section class="w-full px-[100px] py-[50px] max-w-[1200px] mx-auto">
+    <section class="w-full px-[100px] py-[50px] max-w-[1200px] mx-auto ">
         <x-create-todo />
-        <div class="py-12  w-full gap-8 flex flex-col">
+        <div class="py-12  w-full gap-8 flex flex-col min-h-[650px]">
             @foreach ($todos as $todo)
                 <label for="check[{{ $todo->id }}]"
                     class="cursor-pointer group  border-4 border-transparent  hover:border-[#1C83F0]  w-full bg-white rounded-2xl px-8 py-2 gap-2 flex flex-col transition-all duration-300">
@@ -24,8 +24,10 @@
                 </label>
             @endforeach
         </div>
-        <div class="text-white">
-            {{ $todos->links() }}
+        <div class="">
+            {{ $todos->links(data: ['scrollTo' => '#bottom-marker']) }}
         </div>
+
+        <div id="bottom-marker"></div>
     </section>
 </main>

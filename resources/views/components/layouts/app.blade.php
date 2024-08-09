@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
 
-    <title>{{ $title ?? 'Page Title' }}</title>
+    <title>{{ $title ?? 'To-do' }}</title>
 </head>
 
 <body class="bg-[#A18AFF]">
