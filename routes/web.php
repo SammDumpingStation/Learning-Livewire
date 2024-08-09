@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Todo;
+use App\Livewire\TodoComponent;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', Todo::class);
+Route::get('/', TodoComponent::class);
