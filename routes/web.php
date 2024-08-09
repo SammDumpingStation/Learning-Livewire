@@ -1,6 +1,6 @@
 <?php
 
-use App\Livewire\Clicker;
+use App\Livewire\Todo;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', Clicker::class);
+Route::get('/', Todo::class);
