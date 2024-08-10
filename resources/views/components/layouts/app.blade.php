@@ -9,7 +9,7 @@
     <title>{{ $title ?? 'To-do' }}</title>
 </head>
 
-<body class="bg-[#A18AFF]">
+<body class="bg-[#A18AFF] relative">
     {{ $slot }}
 </body>
 
