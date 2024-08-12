@@ -1,6 +1,5 @@
 <main class="min-h-[100vh] flex">
-    <nav class="absolute top-0 right-0 w-full h-16 flex items-center gap-4 px-4"
-        :class="{ 'left-[350px]': '{{ !$hidden }}' }">
+    <nav class="absolute top-0 h-16 flex items-center gap-4 px-4" :class="{ 'left-[350px]': '{{ !$hidden }}' }">
         <button wire:click="hideSidebar" class="flex" :class="{ 'hidden': '{{ !$hidden }}' }">
             <img class="h-6 w-6" src="{{ Vite::asset('resources/icons/sidebar-white.svg') }}" alt="">
         </button>
@@ -19,6 +18,9 @@
             <button @click="$refs.todoField.focus()">
                 <img class="h-6 w-6" src="{{ Vite::asset('resources/icons/write-black.svg') }}" alt="">
             </button>
+            <button class="ml-auto">
+                <img class="h-7 w-7" src="{{ Vite::asset('resources/icons/settings.svg') }}" alt="">
+            </button>
         </div>
 
 
@@ -32,15 +34,14 @@
     </section>
     <section class="w-full px-[100px] py-[100px] max-w-[1200px] mx-auto ">
         <x-create-todo />
-        <div class="py-12  w-full gap-8 flex flex-col min-h-[650px]">
+        <div class="py-12  w-full gap-8 flex flex-col h-[750px]">
             @foreach ($todos as $todo)
                 <x-todo-card :editId="$editId" :todo="$todo" />
             @endforeach
         </div>
         <div class="">
             {{ $todos->links(data: ['scrollTo' => '#bottom-marker']) }}
+            <div id="bottom-marker"></div>
         </div>
-
-        <div id="bottom-marker"></div>
     </section>
 </main>
