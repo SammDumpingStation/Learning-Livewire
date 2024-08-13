@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Todo;
 use Livewire\Attributes\Rule;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -11,6 +12,7 @@ class TodoComponent extends Component
 {
     use WithPagination;
 
+    #[Title('Todos')]
     public $hidden = false;
 
     #[Rule("required", as :'To-do')]
